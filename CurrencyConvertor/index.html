@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+ 
+    <!-- Your own styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CurrXLogo.png">
+ 
+  </head>
+ 
+  <body>
+    <div class="container">
+      <h2>Currency Converter</h2>
+ 
+      <form novalidate>
+        <div class="amount">
+          <p >Enter Amount</p>
+          <input
+            type="number"
+            value="1"
+            min="0"
+            step="any"
+            inputmode="decimal"
+            aria-label="Amount"
+          />
+        </div>
+ 
+        <div class="dropdown">
+          <div class="from">
+            <p>From</p>
+            <div class="select-container">
+              <img src="https://flagcdn.com/w40/us.png" alt="US flag" />
+              <select name="from" aria-label="From currency"></select>
+            </div>
+          </div>
+ 
+          <!-- Swap button: swaps the two currencies -->
+          <button type="button" class="swap" aria-label="Swap currencies">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 8h15M15 4l4 4-4 4" />
+              <path d="M20 16H5M9 12l-4 4 4 4" />
+            </svg>
+          </button>
+ 
+          <div class="to">
+            <p>To</p>
+            <div class="select-container">
+              <img src="https://flagcdn.com/w40/in.png" alt="India flag" />
+              <select name="to" aria-label="To currency"></select>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Result block -->
+        <div class="result status" aria-live="polite">
+          <div class="result-label"></div>
+          <div class="result-value"></div>
+          <div class="result-note">Fetching exchange rate…</div>
+        </div>
+ 
+        <button type="submit" class="get-rate">Get Exchange Rate</button>
+      </form>
+    </div>
+ 
+    <script src="app.js"></script>
+  </body>
+</html>
+ 
